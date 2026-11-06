@@ -9,15 +9,15 @@ export const settings = {
 };
 
 export const chapters = [
-  { title: 'En chliine Afang.', note: 'Eifach schön, bisch du da.', from: 1, to: 6 },
-  { title: 'Fürs Härz.', note: 'Chliini Sache, wo guet tüend.', from: 7, to: 12 },
-  { title: 'Du & ich.', note: 'Ziit für Erinnerige. Und nöii Plän.', from: 13, to: 18 },
-  { title: 'Und alles, wo no chunnt.', note: 'S Schönschte liit mängisch no vor eus.', from: 19, to: 24 },
+  { title: 'Zum Afang.', note: 'Eifach schön, bisch du do.', from: 1, to: 6 },
+  { title: 'Fürs Herz.', note: 'Chlini Sache, wo guet tüend.', from: 7, to: 12 },
+  { title: 'Du & ich.', note: 'Zit für Erinnerige. Und neui Plän.', from: 13, to: 18 },
+  { title: 'Und alles, wo no wird cho.', note: 'S Schönschte kummt erst no.', from: 19, to: 24 },
 ];
 
 export const days = [
-  { day: 1, type: 'compliment', title: 'Schön, gits dich.', text: 'Du muesch hüt nöd alles schaffe. Du dörfsch eifach du sii. Das längt.', placeholder: true },
-  { day: 2, type: 'memory', title: 'Weisch no …?', text: 'Da chunnt e Erinnerig ane, wo eus beidi immer wieder zum Lache bringt.', placeholder: true },
+  { day: 1, type: 'compliment', title: 'Schön, dass es dich git.', text: 'Ich bi sooo dankbar, dass ich dich döff kenne und mir scho so vieli schöni Erinnerige zämme hend döffe mache. Blib so wie du bisch.', placeholder: true },
+  { day: 2, type: 'memory', title: 'Weisch no …?', text: 'Wo mir uns bim Abschied am letzte Tag vo de Primar no gseit hend, "viellicht kömme mir jo zämme in d Klass" und denn hemmer plötzlich no 3 wiiteri Johr döffe mitenander verbringe. Und sie hette nit könne schöner si.', placeholder: true },
   { day: 3, type: 'compliment', title: 'Dis eigete Tempo.', text: 'Du muesch mit niemerem mithalte. Din Wäg derf sich so afühle, wie er für dich stimmt.', placeholder: true },
   { day: 4, type: 'memory', title: 'En Momänt zum Bhalte.', text: 'Da isch Platz für e chliini Gschicht, wo das Bild für dich bsunders macht.', placeholder: true },
   { day: 5, type: 'voucher', title: 'Hüt lad ich dich ii.', text: 'Es feins Esse, ganz vill Ziit zum Plaudere und kei Blick uf d Uhr.', voucher: { label: 'GUTSCHIIN', title: 'Zäme go ässe.', detail: 'Du wählsch, wo. Ich lad dich ii.', code: 'MILI-05' }, placeholder: true },
