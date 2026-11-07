@@ -41,7 +41,7 @@ function createCard(entry) {
   button.append(element('span', 'day-number', String(entry.day).padStart(2, '0')));
   const copy = element('span', 'day-card-copy');
   const state = isToday ? 'DIN HÜTIGE MOMÄNT' : released ? (opened.has(entry.day) ? 'SCHÖN, BISCH WIEDER DA' : 'BEREIT FÜR DICH') : `AB EM ${entry.day}. DEZEMBER`;
-  copy.append(element('span', 'day-state', state), element('span', 'day-title', released ? entry.title : isFinal ? 'Öppis ganz Bsunders.' : ['Es bitzli Vorfreud.', 'No chlii Geduld.', 'öpis für dich'][(entry.day - 1) % 3]));
+  copy.append(element('span', 'day-state', state), element('span', 'day-title', released ? entry.title : isFinal ? 'Öppis ganz Bsunders.' : ['Es bitzli Vorfreud.', 'No chlii Geduld.', 'Öpis für dich'][(entry.day - 1) % 3]));
   button.append(copy, icon(released ? (isFinal ? 'arrow' : 'plus') : 'lock', 'day-control-icon'));
   if (!released) {
     button.disabled = true; button.setAttribute('aria-label', `Momänt ${entry.day}, verfügbar ab em ${entry.day}. Dezember ${settings.year}`);
