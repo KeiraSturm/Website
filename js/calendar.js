@@ -3,7 +3,7 @@ import { element, icon, isReleased, releaseDate, todayKey, readOpened, saveOpene
 const calendar = document.getElementById('calendar');
 let opened = readOpened();
 let expandedDay = null;
-const typeLabels = { compliment: 'ES LIEBS WORT', memory: 'E ERINNERIG', photo: 'ES FÖTELI', voucher: 'ZIIT ZÄME' };
+const typeLabels = { compliment: 'E CHLINI MOTIVATION', memory: 'E ERINNERIG', photo: 'ES FÖTELI', voucher: 'ZIT ZÄME' };
 function updateProgress() {
   const count = days.filter(({ day }) => opened.has(day) && isReleased(day)).length;
   document.getElementById('progress-label').textContent = `${count} vo 24 Momänt entdeckt`;
@@ -28,7 +28,7 @@ function makeContent(entry) {
   if (entry.voucher) {
     const ticket = element('div', 'voucher');
     ticket.append(element('span', 'eyebrow', entry.voucher.label), element('p', 'voucher-title', entry.voucher.title), element('p', 'voucher-detail', entry.voucher.detail), element('span', 'voucher-code', `${entry.voucher.code} · MIT LIEBI`));
-    content.append(ticket, element('p', 'voucher-instruction', 'Wenn du Luscht hesch: Zeig mir eifach das Chärtli, denn mached mir öppis ab.'));
+    content.append(ticket, element('p', 'voucher-instruction', 'Wenn du Luscht hesch: Zeig mir eifach das Kärtli, denn mached mir öppis ab.'));
   }
   return content;
 }
@@ -41,7 +41,7 @@ function createCard(entry) {
   button.append(element('span', 'day-number', String(entry.day).padStart(2, '0')));
   const copy = element('span', 'day-card-copy');
   const state = isToday ? 'DIN HÜTIGE MOMÄNT' : released ? (opened.has(entry.day) ? 'SCHÖN, BISCH WIEDER DA' : 'BEREIT FÜR DICH') : `AB EM ${entry.day}. DEZEMBER`;
-  copy.append(element('span', 'day-state', state), element('span', 'day-title', released ? entry.title : isFinal ? 'Öppis ganz Bsunders.' : ['Es bitzli Vorfreud.', 'No chlii Geduld.', 'Es Momänt für dich.'][(entry.day - 1) % 3]));
+  copy.append(element('span', 'day-state', state), element('span', 'day-title', released ? entry.title : isFinal ? 'Öppis ganz Bsunders.' : ['Es bitzli Vorfreud.', 'No chlii Geduld.', 'öpis für dich'][(entry.day - 1) % 3]));
   button.append(copy, icon(released ? (isFinal ? 'arrow' : 'plus') : 'lock', 'day-control-icon'));
   if (!released) {
     button.disabled = true; button.setAttribute('aria-label', `Momänt ${entry.day}, verfügbar ab em ${entry.day}. Dezember ${settings.year}`);
@@ -79,11 +79,11 @@ function render() {
   }
   const today = todayKey(); const status = document.getElementById('calendar-status'); const availability = document.getElementById('availability-note'); const link = document.getElementById('today-link');
   if (today < releaseDate(1)) {
-    status.textContent = 'Am 1. Dezember gahts los. Bis denn: es bitzli Vorfreud. ♡'; availability.textContent = 'Dis erschte Chärtli gaht am 1. Dezember 2026 uf.'; link.href = '#momente'; link.firstChild.textContent = 'Dini Momänt entdecke ';
+    status.textContent = 'Am 1. Dezember gahts los. Bis denn: es bitzli Vorfreud. ♡'; availability.textContent = 'Dis erschte Kärtli gaht am 1. Dezember 2026 uf.'; link.href = '#momente'; link.firstChild.textContent = 'Dini Momänt entdecke ';
   } else if (today > releaseDate(24)) {
     status.textContent = 'Alli 24 Momänt sind jetzt für dich da. Zum Immer-wieder-Aaluege.'; availability.textContent = 'Dini chliini Sammlig. Zum Bhalte und Wiederentdecke.'; link.href = '#momente'; link.firstChild.textContent = 'Dini Sammlig aaluege ';
   } else {
-    const day = Number(today.slice(-2)); status.textContent = `Hüt isch de ${day}. Dezember. Dis Chärtli wartet uf dich. ♡`; availability.textContent = 'Jede Tag ab Mitternacht · nach Schwiizer Ziit'; link.href = `#tag-${day}`; link.firstChild.textContent = 'Dini hütigi Überraschig ';
+    const day = Number(today.slice(-2)); status.textContent = `Hüt isch de ${day}. Dezember. Dis Kärtli wartet uf dich. ♡`; availability.textContent = 'Jede Tag ab Mitternacht · nach Schwiizer Ziit'; link.href = `#tag-${day}`; link.firstChild.textContent = 'Dini hütigi Überraschig ';
   }
   updateProgress();
   if (focusedDay) document.querySelector(`#${focusedDay} .day-toggle`)?.focus({ preventScroll: true });
